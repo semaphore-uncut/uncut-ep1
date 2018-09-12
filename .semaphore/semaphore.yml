@@ -8,10 +8,11 @@ agent:
 blocks:
   - name: "Build"
     task:
+      prologue:
+        commands:
+          - checkout
+
       jobs:
-        prologue:
-          commands:
-            - checkout
       - name: Docker build
         commands:
           - echo "Docker build..."

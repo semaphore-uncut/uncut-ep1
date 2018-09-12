@@ -25,6 +25,9 @@ blocks:
           - echo "done"
           - echo $B
           - echo $VAR_FROM_SECRET
+          - cd
+          - ls -lah
+          - cat first-file.txt
       - name: Env smoke tests
         commands:
           - echo "Smoke tests"

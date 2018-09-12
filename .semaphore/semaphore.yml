@@ -47,4 +47,4 @@ promotions:
   - name: Staging 1
     pipeline_file: stg1.yml
   - name: Staging 2
-    pipeline_file: stg1.yml
+    pipeline_file: stg2.yml

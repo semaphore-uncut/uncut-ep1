@@ -44,5 +44,7 @@ blocks:
           - echo "make smoke"
 
 promotions:
-  - name: Staging
-    pipeline_file: stg.yml
+  - name: Staging 1
+    pipeline_file: stg1.yml
+  - name: Staging 2
+    pipeline_file: stg1.yml

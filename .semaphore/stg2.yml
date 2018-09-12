@@ -1,5 +1,5 @@
 version: v1.0
-name: Deploy to stg
+name: Deploy to stg2
 agent:
   machine:
     type: e1-standard-2
@@ -11,7 +11,7 @@ blocks:
       jobs:
       - name: Docker build
         commands:
-          - echo "deploying...."
+          - echo "deploying to stg2 env...."
           - echo "done"
 
   - name: "Smoke tests"

@@ -8,6 +8,8 @@ agent:
 blocks:
   - name: "Build"
     task:
+      secrets:
+        - name: sec-one
       prologue:
         commands:
           - checkout
@@ -22,11 +24,13 @@ blocks:
           - echo "Docker build..."
           - echo "done"
           - echo $B
+          - echo $VAR_FROM_SECRET
       - name: Env smoke tests
         commands:
           - echo "Smoke tests"
           - echo "done"
           - echo $A
+          - echo $VAR_FROM_SECRET
 
   - name: "Smoke tests"
     task:

@@ -1,17 +1,19 @@
 version: v1.0
-name: Deploy to stg2
+name: Production deployment pipeline
 agent:
   machine:
     type: e1-standard-2
     os_image: ubuntu1804
 
 blocks:
-  - name: "Deploy"
+  - name: Deploy to prod
     task:
+      secrets:
+        - name: prod-creds
       jobs:
-      - name: Docker build
+      - name: Deploy to prod
         commands:
-          - echo "deploying to stg2 env...."
+          - echo "deploying...."
           - echo "done"
 
   - name: "Smoke tests"
@@ -20,7 +22,3 @@ blocks:
       - name: Smoke
         commands:
           - echo "make smoke"
-
-promotions:
-  - name: Production
-    pipeline_file: prod.yml

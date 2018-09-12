@@ -8,6 +8,9 @@ agent:
 blocks:
   - name: "Deploy"
     task:
+      env_vars:
+        - name: C
+          value: cccc
       jobs:
       - name: Docker build
         commands:
@@ -20,3 +23,7 @@ blocks:
       - name: Smoke
         commands:
           - echo "make smoke"
+
+promotions:
+  - name: Production
+    pipeline_file: prod.yml

@@ -11,16 +11,22 @@ blocks:
       prologue:
         commands:
           - checkout
-
+      env_vars:
+        - name: A
+          value: Aaaaaa
+        - name: B
+          value: Bbbbbb
       jobs:
       - name: Docker build
         commands:
           - echo "Docker build..."
           - echo "done"
+          - echo $B
       - name: Env smoke tests
         commands:
           - echo "Smoke tests"
           - echo "done"
+          - echo $A
 
   - name: "Smoke tests"
     task:

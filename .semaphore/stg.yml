@@ -1,0 +1,22 @@
+version: v1.0
+name: Deploy to stg
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu1804
+
+blocks:
+  - name: "Deploy"
+    task:
+      jobs:
+      - name: Docker build
+        commands:
+          - echo "deploying...."
+          - echo "done"
+
+  - name: "Smoke tests"
+    task:
+      jobs:
+      - name: Smoke
+        commands:
+          - echo "make smoke"
